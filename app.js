@@ -10,11 +10,14 @@ var productRouter=require("./routes/product")
 var registerRouter=require("./routes/reg")
 var authorise=require("./module/authModule")
 
+
+
+var dotenv =require( "dotenv")
 var app = express();
 var cors=require("cors")
 const MongoDBStore = require("connect-mongo");
 mongo.connect()
-
+dotenv.config()
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -48,7 +51,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-app.listen( 3001, () => console.log("started"))
+app.listen(process.env.PORT || 5000, () => console.log("started"))
 
 module.exports = app;
