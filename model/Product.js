@@ -8,7 +8,7 @@ type:String,
 required:true,
 
 maxLength:25,
-enum:["TV","PC","mobile","pendrive"]
+enum:["Television","Laptop","Mobile","Pendrive","Watch","Headphones]
 
     },
     quantity:{
